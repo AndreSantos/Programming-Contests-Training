@@ -1,0 +1,119 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the top of the
+ * compiled file, but it's generally better to create a new file per style scope.
+ *
+ *= require_self
+ *= require_tree .
+*/
+body {
+  background-color: #DDD;
+  margin: 0;
+  padding: 0;
+}
+
+
+#inner {
+  margin-left: 20%;
+  margin-right: 20%;
+  background-color: #FFF;
+}
+
+#content {
+  min-height: 400px;
+  margin-top: 50px;
+}
+
+#header {
+  margin-bottom: 10px;
+}
+
+#header h1 {
+  margin-top: 0;
+  padding-top: 30px;
+  text-align: center;
+}
+
+#footer {
+  text-align: center;
+  font-size: 12px;
+  margin-top:100px;
+}
+
+form {
+  margin-left: 5%;
+  margin-right: 5%;
+  border-radius: 10px 10px;
+  border: 3px solid #999;
+  background-color: #DDD;
+}
+
+form p input[type=submit] {
+  margin-left: 76px; /* 70px + 6px */
+}
+
+form p span.label {
+  min-width: 70px;
+  display: inline-block;
+}
+form p select {
+  width: 100px;
+}
+
+label.error {
+  padding-left: 30px;
+  color: #A33;
+}
+
+form h3 {
+  text-align: center;
+}
+
+.left-50 {
+  margin-left: 50px;
+}
+
+
+#notifications {
+  color: #FFF;
+  text-align: center;
+  
+  /* width: 36%; */
+  max-width: 50%;
+  margin-left:  auto;
+  margin-right: auto;
+  min-height: 60px;
+  /* min-height: 80px; */
+  margin-top: 10px;
+}
+#notifications p {
+  font-size: 18px;
+  font-family: "LinuxLibertineORegular",Georgia, "Times New Roman", Times, serif;
+  color: black;
+  /* margin: 5px 5px 5px 10px !important; */
+  padding-bottom: 0em !important;
+  
+  /* padding-left: 47px; */
+}
+#notifications .error {
+  border: 1px solid #641F1A;
+  color: #641F1A;
+}
+#notifications .notice {
+  border: 1px solid #4F8746;
+  color: #4F8746;
+}
+.notice, .error {
+  padding: 10px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  -moz-box-shadow: 4px 4px #dfe1d8;
+  -webkit-box-shadow: 4px 4px #dfe1d8;
+  box-shadow: 4px 4px #dfe1d8;
+}

@@ -1,0 +1,24 @@
+<div id="content">
+  <%= form_tag application_submit_solution_path, :multipart => true, :id => "submit_solution" do %>
+    <h3>Test your solution</h3>
+    <p class="left-50">
+      <span class="label"> <%= label_tag "Contest:" %> </span>
+      <%= select("code", "contest", @contests.collect {|c| [ c.fullname, c.id ] }, {:prompt => 'Contest...'}) %>
+    </p>
+      
+    <p class="left-50">
+      <span class="label"> <%= label_tag "Problem:" %> </span>
+      <%= select("code", "problem", @problems.collect {|p| [ p.name, p.id ] }, {:prompt => 'Problem...'}) %>
+    </p>
+    
+    <p class="left-50">
+      <span class="label"> <%= label_tag "File:" %> </span>
+      <!--<%= text_area(:file, :code, :cols => 80, :rows => 15) %> -->
+      <%= file_field(:code, :file, :accept => 'text/cpp') %>
+    </p>
+    
+    <p class="left-50">
+      <%= submit_tag "Submit solution" %>
+    </p>
+  <% end %>
+</div>

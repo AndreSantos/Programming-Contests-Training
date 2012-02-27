@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Contest Training</title>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= javascript_include_tag "jquery.min" %>
+  <%= javascript_include_tag "jquery.validate.min" %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+  <div id="inner">
+    <div id="header">
+      <h1>Programming Contest Training</h1>
+    </div>
+    <div id="notifications">
+      <% if flash[:notice] %>
+        <div class="notice">
+          <p><%= flash[:notice] %></p>
+        </div>
+      <% end %>
+      <% if flash[:error] %>
+        <div class="error"> 
+          <p><%= flash[:error] %></p>
+        </div>
+      <% end %>
+    </div>
+
+    <%= yield %>
+
+    <div id="footer">
+      Produced by André Santos
+    </div>
+  </div>
+</body>
+</html>
