@@ -54,4 +54,14 @@ class Solution < ActiveRecord::Base
     command = command + " " + directory("linux") + "/" + FILEEXE + "*.txt"
     execute_command(command)
   end
+
+  def give_veredict(problem, contest, result)
+    if result
+      str = "Accepted"
+      [:notice, "Problem " + problem.name +  " (" + contest.fullname + ") ==> #{str}!"]
+    else
+      str = "Wrong answer"
+      [:error, "Problem " + problem.name +  " (" + contest.fullname + ") ==> #{str}!"]
+    end
+  end
 end

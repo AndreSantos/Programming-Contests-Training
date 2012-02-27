@@ -41,8 +41,13 @@ body {
 
 #footer {
   text-align: center;
-  font-size: 12px;
-  margin-top:100px;
+  font-size: 13px;
+  margin-top: 50px;
+  padding-top: 15px;
+  padding-bottom: 5px;
+  border-top: 2px solid #CCC;
+  margin-left: 5%;
+  margin-right:5%;
 }
 
 form {
@@ -82,31 +87,27 @@ form h3 {
 #notifications {
   color: #FFF;
   text-align: center;
-  
-  /* width: 36%; */
-  max-width: 50%;
+  width: 90%;
   margin-left:  auto;
   margin-right: auto;
-  min-height: 60px;
-  /* min-height: 80px; */
   margin-top: 10px;
 }
 #notifications p {
   font-size: 18px;
   font-family: "LinuxLibertineORegular",Georgia, "Times New Roman", Times, serif;
-  color: black;
+  color: white;
   /* margin: 5px 5px 5px 10px !important; */
   padding-bottom: 0em !important;
-  
+  margin: 0px;
   /* padding-left: 47px; */
 }
 #notifications .error {
   border: 1px solid #641F1A;
-  color: #641F1A;
+  background-color: #641F1A;
 }
 #notifications .notice {
   border: 1px solid #4F8746;
-  color: #4F8746;
+  background-color: #4F8746;
 }
 .notice, .error {
   padding: 10px;

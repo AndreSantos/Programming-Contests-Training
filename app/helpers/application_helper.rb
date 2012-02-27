@@ -12,4 +12,8 @@ module ApplicationHelper
     command = "diff -r #{file1} #{file2}"
     execute_command(command)
   end
+
+  def reset_flash
+    flash.clear
+  end
 end

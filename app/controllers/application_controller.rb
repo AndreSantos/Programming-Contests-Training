@@ -1,7 +1,7 @@
 class ApplicationController < ActionController::Base
   include ApplicationHelper
-  
   protect_from_forgery
+  before_filter :reset_flash
   
   def index
     problems_contests
@@ -30,13 +30,19 @@ class ApplicationController < ActionController::Base
 
     # Test it
     p "Executing problem & solution"
-    veredict = false
-    5.times do |ex|
+    veredict = true
+    problem.total_inputs.times do |ex|
       str = "ex" + (ex+1).to_s
       problem.execute_against(str)
       solution.execute_against(str)
       p "Veredict against test case ##{ex+1}: "
-      p diff(problem.outputname(str),solution.outputname(str))
+      res = diff(problem.outputname(str),solution.outputname(str))
+      if res
+        p "Passed!"
+      else
+        p "Wrong!"
+      end
+      veredict = false    if res == false
     end
     # Delete create exe's & outputs
     p "Delete executables & ouptuts"
@@ -44,8 +50,9 @@ class ApplicationController < ActionController::Base
     solution.del_files
     
     # Give veridict
-    flash[:notice] = "Problem " + problem.name +  " (" + contest.fullname + ") ==> Accepted!"
-    
+    resp = solution.give_veredict(problem, contest, veredict)
+    flash[resp.first] = resp.last
+
     render "index.html"
   end
   
